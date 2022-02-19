@@ -1,0 +1,24 @@
+{
+    "id": 3,
+    "items": [
+        {
+            "id": 1,
+            "productId": 1,
+            "quantity": 1
+        }
+    ],
+    "paymentMethod": "Credit card",
+    "paid": true,
+    "creditCardNo": "1234123412341234",
+    "creditCardName":"Paphop Sawasdee",
+    "creditCardMonth": 2,
+    "creditCardYear": 2026,
+    "CVC": "123",
+    "contact": {
+        "zipcode": "10600",
+        "province": "Bangkok",
+        "city": "Huaikhwang",
+        "street": "238 Ratchadaphisek Rd Huaikhwang",
+        "phone": "0929838940"
+    }
+}
