@@ -1,23 +1,13 @@
-## Assignments for Java Boot Camp
-* [Week 1 :: Design and Develop RESTful API with Spring Boot](https://github.com/up1/assignment-java-boot-camp/wiki/Week-01)
+A repository for Java Software Engineering Bootcamp assignments (12 Feb - 20 Mar, 2022) https://kbtgclassnest.skooldio.com/
+## Writeups for assignments
+* [Week 1 :: Design and Develop RESTful API with Spring Boot](https://github.com/paphopsaw/assignment-java-boot-camp/wiki/Week-01)
 
-
-
-## Resources
-* [Spring Boot Reference](https://spring.io/projects/spring-boot)
-* https://www.baeldung.com/ 
-* https://start.spring.io/
-* [Git commit message](https://www.conventionalcommits.org/en/v1.0.0/)
-
-
-
-
-
-
-```mermaid
-sequenceDiagram
-    actor Alice
-    actor Bob
-    Alice->>Bob: Hi Bob
-    Bob->>Alice: Hi Alice
+## Setup and run
+Java 11
+```
+./mvnw clean
+./mvnw compile
+./mvnw test
+./mvnw package
+./mvnw spring-boot:run
 ```
