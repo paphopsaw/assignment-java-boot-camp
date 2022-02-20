@@ -1,7 +1,7 @@
 {
     "id": 1,
     "name": "iPhone 13 128GB Red",
-    "price": 29900,
+    "price": 29900.0,
     "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-product-red-select-2021?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1629907846000",
     "reviewScore": 4.5
 }
