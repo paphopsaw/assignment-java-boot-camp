@@ -2,6 +2,9 @@ package com.example.shopping;
 
 import com.example.shopping.products.Product;
 import com.example.shopping.products.ProductRepository;
+import com.example.shopping.users.Contact;
+import com.example.shopping.users.User;
+import com.example.shopping.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +17,9 @@ public class ShoppingApplication {
 
 	@Autowired
 	private ProductRepository productRepository;
+
+	@Autowired
+	private UserRepository userRepository;
 
 	@PostConstruct
 	public void initializeData() {
@@ -46,7 +52,16 @@ public class ShoppingApplication {
 		productRepository.save(product3);
 		productRepository.save(product4);
 
-
+		User user = new User(1, "Stock");
+		Contact contact = new Contact(101,
+									user,
+									"10310",
+									"Bangkok",
+									"Huaikhwang",
+									"238 Ratchadaphisek Rd Huaikhwang",
+									"0929838940");
+		user.setContact(contact);
+		userRepository.save(user);
 	}
 
 	public static void main(String[] args) {
