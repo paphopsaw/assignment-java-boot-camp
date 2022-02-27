@@ -69,6 +69,29 @@ class UserServiceTest {
         return list;
     }
 
+    private User mockUpUserDataForPayment() {
+        User user = new User(1, "Stock");
+        Contact contact = new Contact(1,
+                user,
+                "10310",
+                "Bangkok",
+                "Huaikhwang",
+                "238 Ratchadaphisek Rd Huaikhwang",
+                "0929838940");
+        user.setContact(contact);
+        Product product1 = new Product(
+                1,
+                "iPhone 13 128GB Red",
+                29900.0,
+                "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-product-red-select-2021?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1629907846000",
+                4.9);
+        CartItem cartItem = new CartItem(101, user, product1, 2);
+        List<CartItem> cart = new ArrayList<>();
+        cart.add(cartItem);
+        user.setCart(cart);
+        return user;
+    }
+
     @Test
     void getById() {
         //Arrange
@@ -88,11 +111,11 @@ class UserServiceTest {
         //Arrange
         when(userRepository.findById(1)).thenReturn(Optional.of(mockUpUserData()));
         when(productRepository.findById(2)).thenReturn(Optional.of(mockUpProductData().get(1)));
+        CartItemRequest cartItemRequest = new CartItemRequest(2, 3);
         //Act
         UserService userService = new UserService();
         userService.setUserRepository(userRepository);
         userService.setProductRepository(productRepository);
-        CartItemRequest cartItemRequest = new CartItemRequest(2, 3);
         userService.addToCart(1, cartItemRequest);
         User user = userService.getById(1);
         //Assert
@@ -110,5 +133,31 @@ class UserServiceTest {
         //Assert
         assertThrows(InvalidQuantityException.class,
                 () -> userService.addToCart(1, cartItemRequest));
+    }
+
+    @Test
+    void checkout() {
+        //Arrange
+        when(userRepository.findById(1)).thenReturn(Optional.of(mockUpUserDataForPayment()));
+
+        PaymentRequest paymentRequest = new PaymentRequest(
+                "Credit card",
+                "1234123412341234",
+                "Paphop Sawasdee",
+                2,
+                2026,
+                "123"
+        );
+        //Act
+        UserService userService = new UserService();
+        userService.setUserRepository(userRepository);
+        userService.setProductRepository(productRepository);
+        userService.checkout(1, paymentRequest);
+        User user = userService.getById(1);
+        //Assert
+        assertEquals(0, user.getCart().size());
+        assertEquals(1, user.getOrders().size());
+        assertEquals(29900.0 * 2, user.getOrders().get(0).getTotalAmount());
+        assertEquals("Bangkok", user.getOrders().get(0).getContact().getProvince());
     }
 }
