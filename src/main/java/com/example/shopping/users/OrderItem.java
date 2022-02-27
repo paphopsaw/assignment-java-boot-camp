@@ -15,7 +15,7 @@ public class OrderItem {
 
     @ManyToOne
     @JsonBackReference
-    //@JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "order_id", nullable = false)
     private UserOrder order;
 
     private int quantity;

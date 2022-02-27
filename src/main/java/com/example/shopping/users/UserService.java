@@ -98,6 +98,7 @@ public class UserService {
                 paymentRequest.getCvc()
         );
         List<UserOrder> orders = user.getOrders();
+        order.setUser(user);
         orders.add(order);
         user.setOrders(orders);
         //Clear cart

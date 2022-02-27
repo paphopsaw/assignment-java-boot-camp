@@ -17,8 +17,7 @@ public class UserOrder {
     private User user;
 
     @JsonManagedReference
-    //@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    @OneToMany
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 
     @OneToOne
