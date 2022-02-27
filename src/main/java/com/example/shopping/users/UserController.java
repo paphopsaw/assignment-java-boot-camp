@@ -26,4 +26,15 @@ public class UserController {
         userResponse.setUser(userService.getById(id));
         return userResponse;
     }
+
+    @PostMapping(value = "/api/user/{id}/checkout",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserResponse checkout(@PathVariable int id, @RequestBody PaymentRequest paymentRequest) {
+        UserResponse userResponse = new UserResponse();
+        userService.checkout(id, paymentRequest);
+        userResponse.setMessage("Checked out cart");
+        userResponse.setUser(userService.getById(id));
+        return userResponse;
+    }
 }
