@@ -15,4 +15,15 @@ public class UserController {
         userResponse.setUser(userService.getById(id));
         return userResponse;
     }
+
+    @PostMapping(value = "/api/user/{id}/cart",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserResponse addToCart(@PathVariable int id, @RequestBody CartItemRequest cartItemRequest) {
+        UserResponse userResponse = new UserResponse();
+        userService.addToCart(id, cartItemRequest);
+        userResponse.setMessage("Add item to cart");
+        userResponse.setUser(userService.getById(id));
+        return userResponse;
+    }
 }

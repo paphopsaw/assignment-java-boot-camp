@@ -2,6 +2,7 @@ package com.example.shopping.users;
 
 
 import com.example.shopping.products.Product;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 
@@ -11,6 +12,7 @@ public class CartItem {
     private int id;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

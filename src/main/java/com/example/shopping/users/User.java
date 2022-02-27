@@ -17,6 +17,7 @@ public class User{
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Contact contact;
 
+	@JsonManagedReference
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<CartItem> cart;
 
