@@ -24,7 +24,7 @@ public class User{
 
 	@JsonManagedReference
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	private List<Order> orders;
+	private List<UserOrder> orders;
 
 	public User() {
 		this.contact = new Contact();
@@ -73,11 +73,11 @@ public class User{
 		this.cart = cart;
 	}
 
-	public List<Order> getOrders() {
+	public List<UserOrder> getOrders() {
 		return orders;
 	}
 
-	public void setOrders(List<Order> orders) {
+	public void setOrders(List<UserOrder> orders) {
 		this.orders = orders;
 	}
 }

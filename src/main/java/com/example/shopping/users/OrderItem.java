@@ -15,15 +15,15 @@ public class OrderItem {
 
     @ManyToOne
     @JsonBackReference
-    @JoinColumn(name = "order_id", nullable = false)
-    private Order order;
+    //@JoinColumn(name = "order_id", nullable = false)
+    private UserOrder order;
 
     private int quantity;
     private double price;
 
     public OrderItem() {}
 
-    public OrderItem(int id, Product product, Order order, int quantity, double price) {
+    public OrderItem(int id, Product product, UserOrder order, int quantity, double price) {
         this.id = id;
         this.product = product;
         this.order = order;
@@ -47,11 +47,11 @@ public class OrderItem {
         this.product = product;
     }
 
-    public Order getOrder() {
+    public UserOrder getOrder() {
         return order;
     }
 
-    public void setOrder(Order order) {
+    public void setOrder(UserOrder order) {
         this.order = order;
     }
 

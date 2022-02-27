@@ -67,7 +67,7 @@ public class UserService {
 
         User user = userResult.get();
         int newOrderId = user.getOrders().size() + 1;
-        Order order = new Order(newOrderId);
+        UserOrder order = new UserOrder(newOrderId);
         //Set Order contact
         order.setContact(user.getContact());
         //Get CartItems from User, sum amount of money while adding to Order.orderItems
@@ -97,7 +97,7 @@ public class UserService {
                 paymentRequest.getCreditCardYear(),
                 paymentRequest.getCvc()
         );
-        List<Order> orders = user.getOrders();
+        List<UserOrder> orders = user.getOrders();
         orders.add(order);
         user.setOrders(orders);
         //Clear cart

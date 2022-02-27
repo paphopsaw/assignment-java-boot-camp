@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Order {
+public class UserOrder {
     @Id
     private int id;
 
@@ -17,7 +17,8 @@ public class Order {
     private User user;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    //@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany
     private List<OrderItem> orderItems;
 
     @OneToOne
@@ -33,10 +34,10 @@ public class Order {
     private int creditCardYear;
     private String cvc;
 
-    public Order() {
+    public UserOrder() {
     }
 
-    public Order(int id) {
+    public UserOrder(int id) {
         this.id = id;
     }
 
