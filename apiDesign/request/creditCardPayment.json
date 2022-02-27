@@ -1,7 +1,8 @@
 {
+    "paymentMethod": "Credit card",
     "creditCardNo": "1234123412341234",
-    "creditCardName":"Paphop Sawasdee",
+    "creditCardName": "Paphop Sawasdee",
     "creditCardMonth": 2,
     "creditCardYear": 2026,
-    "CVC": "123"
+    "cvc": "123"
 }

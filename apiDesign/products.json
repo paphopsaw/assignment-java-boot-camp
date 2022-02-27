@@ -1,0 +1,33 @@
+{
+  "productList": [
+    {
+      "id": 1,
+      "name": "iPhone 13 128GB Red",
+      "price": 29900.0,
+      "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-product-red-select-2021?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1629907846000",
+      "reviewScore": 4.9
+    },
+    {
+      "id": 2,
+      "name": "iPhone 12 64GB Blue",
+      "price": 25900.0,
+      "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-blue-select-2020?wid=940&hei=1112&fmt=png-alpha&.v=1604343704000",
+      "reviewScore": 4.8
+    },
+    {
+      "id": 3,
+      "name": "iPhone 12 128GB Black",
+      "price": 27900.0,
+      "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-black-select-2020?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1604343702000",
+      "reviewScore": 4.8
+    },
+    {
+      "id": 4,
+      "name": "Apple watch series 7 Blue 45mm",
+      "price": 14900.0,
+      "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MKUW3_VW_34FR+watch-45-alum-blue-nc-7s_VW_34FR_WF_CO?wid=1400&hei=1400&trim=1,0&fmt=p-jpg&qlt=95&.v=1632171100000,1631661591000",
+      "reviewScore": 5.0
+    }
+  ],
+  "message": null
+}

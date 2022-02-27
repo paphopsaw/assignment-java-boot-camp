@@ -1,0 +1,26 @@
+{
+  "productList": [
+    {
+      "id": 1,
+      "name": "iPhone 13 128GB Red",
+      "price": 29900.0,
+      "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-product-red-select-2021?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1629907846000",
+      "reviewScore": 4.9
+    },
+    {
+      "id": 2,
+      "name": "iPhone 12 64GB Blue",
+      "price": 25900.0,
+      "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-blue-select-2020?wid=940&hei=1112&fmt=png-alpha&.v=1604343704000",
+      "reviewScore": 4.8
+    },
+    {
+      "id": 3,
+      "name": "iPhone 12 128GB Black",
+      "price": 27900.0,
+      "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-black-select-2020?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1604343702000",
+      "reviewScore": 4.8
+    }
+  ],
+  "message": null
+}

@@ -1,13 +1,17 @@
 {
-    "id": 1,
-    "name": "Paphop Sawasdee",
-    "contact": {
-        "zipcode": "10310",
-        "province": "Bangkok",
-        "city": "Huaikhwang",
-        "street": "238 Ratchadaphisek Rd Huaikhwang",
-        "phone": "0929838940"
-    },
-    "cart": [12],
-    "orders": [3]
+    "message": null,
+    "user": {
+        "id": 1,
+        "name": "Stock",
+        "contact": {
+            "id": 101,
+            "zipcode": "10310",
+            "province": "Bangkok",
+            "city": "Huaikhwang",
+            "phone": "0929838940",
+            "street": "238 Ratchadaphisek Rd Huaikhwang"
+        },
+        "cart": [],
+        "orders": []
+    }
 }

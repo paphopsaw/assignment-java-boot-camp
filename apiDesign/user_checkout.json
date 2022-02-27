@@ -1,0 +1,51 @@
+{
+  "message": "Checked out cart",
+  "user": {
+    "id": 1,
+    "name": "Stock",
+    "contact": {
+      "id": 101,
+      "zipcode": "10310",
+      "province": "Bangkok",
+      "city": "Huaikhwang",
+      "phone": "0929838940",
+      "street": "238 Ratchadaphisek Rd Huaikhwang"
+    },
+    "cart": [],
+    "orders": [
+      {
+        "id": 1,
+        "orderItems": [
+          {
+            "id": 1,
+            "product": {
+              "id": 3,
+              "name": "iPhone 12 128GB Black",
+              "price": 27900.0,
+              "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-black-select-2020?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1604343702000",
+              "reviewScore": 4.8
+            },
+            "quantity": 5,
+            "price": 27900.0
+          }
+        ],
+        "contact": {
+          "id": 101,
+          "zipcode": "10310",
+          "province": "Bangkok",
+          "city": "Huaikhwang",
+          "phone": "0929838940",
+          "street": "238 Ratchadaphisek Rd Huaikhwang"
+        },
+        "totalAmount": 139500.0,
+        "paymentReceived": true,
+        "paymentMethod": "Credit card",
+        "creditCardNo": "1234123412341234",
+        "creditCardName": "Paphop Sawasdee",
+        "creditCardMonth": 2,
+        "creditCardYear": 2026,
+        "cvc": "123"
+      }
+    ]
+  }
+}

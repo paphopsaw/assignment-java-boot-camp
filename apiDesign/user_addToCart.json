@@ -1,0 +1,29 @@
+{
+  "message": "Add item to cart",
+  "user": {
+    "id": 1,
+    "name": "Stock",
+    "contact": {
+      "id": 101,
+      "zipcode": "10310",
+      "province": "Bangkok",
+      "city": "Huaikhwang",
+      "phone": "0929838940",
+      "street": "238 Ratchadaphisek Rd Huaikhwang"
+    },
+    "cart": [
+      {
+        "id": 1,
+        "product": {
+          "id": 3,
+          "name": "iPhone 12 128GB Black",
+          "price": 27900.0,
+          "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-black-select-2020?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1604343702000",
+          "reviewScore": 4.8
+        },
+        "quantity": 5
+      }
+    ],
+    "orders": []
+  }
+}
