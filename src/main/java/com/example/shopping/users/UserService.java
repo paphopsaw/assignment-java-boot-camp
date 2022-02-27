@@ -31,7 +31,7 @@ public class UserService {
         throw new UserNotFoundException(id);
     }
 
-    public void addToCart(int cartItemId, int userId, CartItemRequest cartItemRequest) {
+    public void addToCart(int userId, CartItemRequest cartItemRequest) {
         int productId = cartItemRequest.getProductId();
         int quantity = cartItemRequest.getQuantity();
         if (!quantityIsValid(quantity))
@@ -48,7 +48,8 @@ public class UserService {
         //Get current cart
         List<CartItem> cart = userResult.get().getCart();
         //Create new item to be added
-        CartItem newItem = new CartItem(cartItemId, user, product, quantity);
+        int newItemId = cart.size() + 1;
+        CartItem newItem = new CartItem(newItemId, user, product, quantity);
         //Add to cart
         cart.add(newItem);
         user.setCart(cart);

@@ -93,12 +93,13 @@ class UserServiceTest {
         userService.setUserRepository(userRepository);
         userService.setProductRepository(productRepository);
         CartItemRequest cartItemRequest = new CartItemRequest(2, 3);
-        userService.addToCart(201, 1, cartItemRequest);
+        userService.addToCart(1, cartItemRequest);
         User user = userService.getById(1);
         //Assert
         assertEquals(1, user.getCart().size());
         assertEquals(3, user.getCart().get(0).getQuantity());
         assertEquals("iPhone 12 64GB Blue", user.getCart().get(0).getProduct().getName());
+        assertEquals(1, user.getCart().get(0).getId());
     }
 
     @Test
@@ -108,6 +109,6 @@ class UserServiceTest {
         CartItemRequest cartItemRequest = new CartItemRequest(2, -2);
         //Assert
         assertThrows(InvalidQuantityException.class,
-                () -> userService.addToCart(201, 1, cartItemRequest));
+                () -> userService.addToCart(1, cartItemRequest));
     }
 }
