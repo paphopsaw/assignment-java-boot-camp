@@ -160,4 +160,28 @@ class UserServiceTest {
         assertEquals(29900.0 * 2, user.getOrders().get(0).getTotalAmount());
         assertEquals("Bangkok", user.getOrders().get(0).getContact().getProvince());
     }
+
+    @Test
+    void checkout_empty_cart() {
+        //Arrange
+        when(userRepository.findById(1)).thenReturn(Optional.of(mockUpUserData()));
+
+        PaymentRequest paymentRequest = new PaymentRequest(
+                "Credit card",
+                "1234123412341234",
+                "Paphop Sawasdee",
+                2,
+                2026,
+                "123"
+        );
+        //Act
+        UserService userService = new UserService();
+        userService.setUserRepository(userRepository);
+        userService.setProductRepository(productRepository);
+        User user = userService.getById(1);
+        //Assert
+        assertThrows(InvalidCheckoutException.class,
+                () -> userService.checkout(1, paymentRequest));
+    }
+
 }

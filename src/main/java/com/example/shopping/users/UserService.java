@@ -66,6 +66,9 @@ public class UserService {
             throw new UserNotFoundException(userId);
 
         User user = userResult.get();
+        if (user.getCart().isEmpty())
+            throw new InvalidCheckoutException("Cart is empty");
+
         int newOrderId = user.getOrders().size() + 1;
         UserOrder order = new UserOrder(newOrderId);
         //Set Order contact
