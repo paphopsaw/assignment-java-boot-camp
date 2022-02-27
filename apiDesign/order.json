@@ -2,13 +2,14 @@
     "id": 3,
     "items": [
         {
-            "id": 1,
             "productId": 1,
+            "price": 29990.0,
             "quantity": 1
         }
     ],
+    "totalAmount": 29990.0,
     "paymentMethod": "Credit card",
-    "paid": true,
+    "paymentReceived": true,
     "creditCardNo": "1234123412341234",
     "creditCardName":"Paphop Sawasdee",
     "creditCardMonth": 2,

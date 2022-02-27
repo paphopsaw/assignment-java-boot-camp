@@ -1,5 +1,6 @@
 package com.example.shopping.users;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -21,9 +22,14 @@ public class User{
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<CartItem> cart;
 
+	@JsonManagedReference
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private List<Order> orders;
+
 	public User() {
 		this.contact = new Contact();
 		this.cart = new ArrayList<>();
+		this.orders = new ArrayList<>();
 	}
 
 	public User(int id, String name) {
@@ -31,6 +37,7 @@ public class User{
 		this.name = name;
 		this.contact = new Contact();
 		this.cart = new ArrayList<>();
+		this.orders = new ArrayList<>();
 	}
 
 
@@ -64,5 +71,13 @@ public class User{
 
 	public void setCart(List<CartItem> cart) {
 		this.cart = cart;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 }
